@@ -1,11 +1,104 @@
-@import 'null';
-@import 'mixins/mixins';
-
-$maxWidthContainer: 1080;
+// === <ПЕРЕМЕННЫЕ> ===================================================
+$maxWidthContainer: 1100;
 $maxWidth: 1920;
 
-// .app_wrapper {
-//   max-width: 1230px;
-//   margin: 0 auto;
-//   padding: 0 15px;
-// }
+// === <МИКСИНЫ> ======================================================
+@import 'mixins/mixins';
+
+// === <ШРИФТЫ ЛОКАЛЬНЫЕ> =============================================
+@import 'blocks/fonts';
+
+// === <ОБНУЛЕНИЕ> ====================================================
+@import 'blocks/null';
+
+html,
+body {
+  scrollbar-color: #c1c1c1 #f0f0f0;
+  scrollbar-width: thin;
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #c1c1c1;
+    border-radius: 8px;
+    &:hover {
+      background-color: darken(#c1c1c1, 10%);
+    }
+  }
+  ::-webkit-scrollbar-track,
+  ::-webkit-scrollbar-corner {
+    background-color: #f0f0f0;
+  }
+}
+
+html {
+  height: 100%;
+  min-width: 100%;
+  &._pc{
+    overflow-x: hidden;
+    margin: 0px calc(-1 * (100vw - 100%)) 0px 0px;
+  }
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  font-family: 'ProximaNova', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1;
+  color: #000;
+  background-color: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+//<ОБОЛОЧКА>============================================================
+#wrapper {
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+// === <КОНТЕЙНЕР> =====================================================
+._container {
+  max-width: 1130px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+// <ПОДКЛЮЧЕНИЕ ГОТОВЫХ КЛАССОВ>========================================
+@import 'blocks/ui';
+
+// === <ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ> =================
+@import 'blocks/header';
+
+@import 'pages/feed';
+@import 'pages/user-profile';
+
+// === <ОСНОВНОЙ БЛОК> =================================================
+.page {
+  flex: 1 1 auto;
+  // .page__main
+  &__main {
+    padding: 20px 0px 0px 0px;
+  }
+}
+.main {
+  // .main__wrapper
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 0px 50px 0px;
+  }
+  // .main__feed
+  &__feed {
+  }
+  // .main__user-profile
+  &__user-profile {
+  }
+}

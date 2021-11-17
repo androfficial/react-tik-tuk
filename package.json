@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.24.0",
     "classnames": "^2.3.1",
+    "json-server": "^0.17.0",
     "node-sass": "4.14.1",
     "react": "^17.0.2",
     "react-app-rewire-alias": "^1.1.5",
@@ -23,8 +24,10 @@
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "json-server": "json-server --watch ./public/user-feed.json --port 3001"
   },
+  "proxy": "http://localhost:3001",
   "eslintConfig": {
     "extends": [
       "react-app",
