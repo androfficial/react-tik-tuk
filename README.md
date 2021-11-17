@@ -10,7 +10,7 @@ yarn install
 
 ```bash
 # Run app
-1. npm run start and running script with command "npm run json-server"
+npm run start and running script with command "npm run json-server"
 or
 yarn start and running script with command "yarn run json-server"
 ```
