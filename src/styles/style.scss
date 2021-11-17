@@ -1,5 +1,5 @@
 // === <ПЕРЕМЕННЫЕ> ===================================================
-$maxWidthContainer: 1100;
+$maxWidthContainer: 1130;
 $maxWidth: 1920;
 
 // === <МИКСИНЫ> ======================================================
@@ -93,7 +93,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0px 0px 50px 0px;
+    padding: 0px 0px 20px 0px;
   }
   // .main__feed
   &__feed {

@@ -1,8 +1,10 @@
 // FEED
 .feed {
+  width: 100%;
+  max-width: 600px;
   display: grid;
   grid-auto-flow: row;
-  grid-template: repeat(2, auto) / 600px;
+  grid-template: repeat(2, auto) / auto;
   row-gap: 20px;
   // .feed__top
   &__top {
@@ -14,7 +16,7 @@
   &__items {
     display: grid;
     grid-auto-flow: row;
-    grid-template: repeat(2, auto) / auto;
+    grid-template: auto / auto;
     row-gap: 30px;
   }
   // .feed__items-list
@@ -72,6 +74,9 @@
     justify-content: start;
     column-gap: 4px;
     overflow: hidden;
+    @media (max-width: 480px) {
+      grid-template-rows: repeat(2, 1fr);
+    }
   }
   // .item-feed__uniqueId-link
   &__uniqueId-link {
@@ -120,24 +125,32 @@
   // .item-feed__hashtag-str
   &__hashtag-str {
     font-weight: 600;
-    color: rgba(22, 24, 35, 1.0);
+    color: rgba(22, 24, 35, 1);
   }
   // .item-feed__wrapper
   &__wrapper {
-    width: calc(0.56 * (450px + ((100vw - 768px) / 1152) * 100));
+    width: 290px;
     display: grid;
     grid-auto-flow: row;
     grid-template: repeat(2, auto) / auto;
     row-gap: 15px;
-    margin: 0px 0px 0px 68px;
+    @include adaptiv-value('margin-left', 68, 0, 1);
   }
   // .item-feed__body
   &__body {
     display: flex;
     flex-direction: column;
+    padding: 0px 0px 520px / 290px * 100% 0px;
+    position: relative;
   }
   // .item-feed__author-video
   &__author-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
   // .item-feed__footer
   &__footer {
@@ -165,15 +178,15 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 48px;
-    height: 48px;
-    border-radius: 100%;
+    @include adaptiv-value('width', 48, 38, 1);
+    @include adaptiv-value('height', 48, 38, 1);
+    border-radius: 50%;
     background-color: rgba(22, 24, 35, 0.06);
     cursor: pointer;
     transition: background-color 0.2s ease 0s;
     svg {
-      width: 22px;
-      height: 22px;
+      @include adaptiv-value('width', 22, 20, 1);
+      @include adaptiv-value('height', 22, 20, 1);
       cursor: pointer;
     }
     @media (hover: hover) {

@@ -16,9 +16,11 @@
     grid-template-rows: auto;
     column-gap: 30px;
     padding: 5px 0;
+    @include adaptiv-value("column-gap", 30, 15, 1);
   }
   // .header__logo
   &__logo {}
   // .header__menu
-  &__menu {}
+  &__menu {
+  }
 }

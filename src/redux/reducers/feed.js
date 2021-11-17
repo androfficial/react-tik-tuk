@@ -2,10 +2,11 @@ import { Types } from '@redux/actions/feed';
 
 let initialState = {
   posts: [],
-  postsCount: null,
-  currentPage: 1,
-  pageSize: 5,
+  isLoaded: false,
   errorApi: false,
+  // postsCount: null,
+  // currentPage: 1,
+  // pageSize: 5,
 };
 
 const feed = (state = initialState, action) => {
@@ -15,12 +16,14 @@ const feed = (state = initialState, action) => {
         ...state,
         posts: action.payload,
         postsCount: action.payload.length,
+        isLoaded: true,
+        errorApi: false,
       };
-    case Types.SET_CURRENT_PAGE:
-      return {
-        ...state,
-        currentPage: action.payload,
-      };
+    // case Types.SET_CURRENT_PAGE:
+    //   return {
+    //     ...state,
+    //     currentPage: action.payload,
+    //   };
     case Types.SET_ERROR_API:
       return {
         ...state,

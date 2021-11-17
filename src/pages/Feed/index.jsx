@@ -1,12 +1,12 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { Post } from '@components';
+import { Post, Preloader } from '@components';
 import { fetchPosts } from '@redux/actions/feed';
 
 const Feed = () => {
   const dispatch = useDispatch();
-  const posts = useSelector(({ feed }) => feed.posts);
+  const [posts, isLoaded] = useSelector(({ feed }) => [feed.posts, feed.isLoaded]);
 
   useEffect(() => {
     dispatch(fetchPosts());
@@ -20,7 +20,11 @@ const Feed = () => {
         </div>
         <div className="feed__items">
           <div className="feed__items-list">
-            {posts && posts.map((obj, i) => <Post key={i} {...obj} />)}
+            {isLoaded ? (
+              posts.map((obj, i) => <Post key={i} {...obj} />)
+            ) : (
+              <Preloader />
+            )}
           </div>
           {/* <div className="feed__pagination">
             <Pagination postsCount={postsCount} currentPage={currentPage} pageSize={pageSize} />

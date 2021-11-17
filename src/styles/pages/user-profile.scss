@@ -1,8 +1,10 @@
 // USER-PROFILE
 .user-profile {
+  width: 100%;
+  max-width: 750px;
   display: grid;
   grid-auto-flow: row;
-  grid-template: repeat(2, auto) / 750px;
+  grid-template: repeat(2, auto) / auto;
   row-gap: 30px;
   padding: 20px 0px 0px 0px;
   // .user-profile__top
@@ -34,7 +36,7 @@
   &__author-uniqueId {
     display: inline-flex;
     align-items: center;
-    font-size: 32px;
+    @include adaptiv-value("font-size", 32, 28, 1);
     line-height: 38px / 32px * 100%;
     svg {
       width: 20px;
@@ -96,7 +98,7 @@
   &__bottom {
     display: grid;
     grid-auto-flow: row;
-    grid-template: repeat(2, auto) / auto;
+    grid-template: auto / auto;
     row-gap: 30px;
   }
   // .user-profile__posts
@@ -105,7 +107,10 @@
     grid-auto-flow: row;
     grid-auto-rows: auto;
     grid-template-columns: repeat(auto-fill, minmax(196px, 1fr));
-    gap: 2px;
+    gap: 3px;
+    @media (max-width: 480px) {
+      gap: 10px;
+    }
   }
   // .user-profile__post
   &__post {
@@ -121,12 +126,16 @@
   grid-auto-flow: row;
   grid-template: auto / repeat(3, auto);
   justify-content: start;
-  column-gap: 15px;
+  gap: 5px 15px;
+  @media (max-width: 450px) {
+    grid-template: repeat(3, auto) / auto;
+  }
   // .stats-user__info
   &__info {
     display: grid;
     grid-auto-flow: row;
     align-items: center;
+    justify-content: start;
     grid-template: auto / repeat(2, auto);
     column-gap: 5px;
     color: rgba(18, 18, 18, 0.75);

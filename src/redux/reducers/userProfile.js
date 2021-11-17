@@ -2,6 +2,7 @@ import { Types } from '@redux/actions/userProfile';
 
 let initialState = {
   userInfo: {},
+  isLoaded: false,
   errorApi: false,
 };
 
@@ -11,6 +12,12 @@ const userProfile = (state = initialState, action) => {
       return {
         ...state,
         userInfo: action.payload,
+        isLoaded: true,
+      };
+    case Types.SET_IS_LOADED:
+      return {
+        ...state,
+        isLoaded: action.payload,
       };
     default:
       return state;

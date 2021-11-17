@@ -13,6 +13,7 @@ const Post = ({
   text,
   verified,
   video,
+  cover,
 }) => {
   return (
     <article className="feed__item item-feed">
@@ -61,6 +62,7 @@ const Post = ({
             loop
             controls
             preload="metadata"
+            poster={cover}
             src={video}
             className="item-feed__author-video _author-video"></video>
         </div>

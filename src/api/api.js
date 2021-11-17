@@ -13,7 +13,7 @@ const instance = axios.create({
 export const mainAPI = {
   async getPosts() {
     try {
-      const { data } = await instance(`trending/feed`);
+      const { data } = await instance(`trending/feed/?limit=10`);
 
       return data.map((obj) => {
         return {
@@ -26,19 +26,29 @@ export const mainAPI = {
           hashtags: obj.hashtags.map((obj) => `#${obj.name}`),
           text: stringFormatting(obj.text),
           video: obj.videoUrl,
+          cover: obj.covers.origin,
         };
       });
     } catch (error) {
-      console.error(`Could not fetch: ${error.message}`);
-      return false;
+      if (error.response) {
+        console.error(
+          `Could not fetch: ${error.response.data.message}. \nStatus: ${error.response.status}`,
+        );
+        return false;
+      }
     }
   },
   async getUserInfo(uniqueName) {
     try {
       const [info, feed] = await Promise.all([
         instance(`user/info/${uniqueName}`),
-        axios.get('/itemList'),
+        axios.get('/itemList/?_limit=9'),
       ]);
+
+      // Проблема с получением информации о пользователе "Info"
+      if (!info || ("code" in info)) {
+        throw new Error('Failed to get user information');
+      }
 
       const posts = feed.data.map((obj) => {
         return {
@@ -56,12 +66,19 @@ export const mainAPI = {
         description: info.data.user.signature,
         userName: info.data.user.uniqueId,
         verified: info.data.user.verified,
-        bioLink: info.data.user.bioLink && info.data.user.bioLink.link, 
+        bioLink: info.data.user.bioLink && info.data.user.bioLink.link,
         posts: posts,
       };
     } catch (error) {
-      console.error(`Could not fetch: ${error.message}`);
-      return false;
+      if (error.response) {
+        console.error(
+          `Could not fetch: ${error.response.data.message}. \nStatus: ${error.response.status}`,
+        );
+        return false;
+      } else {
+        console.error('Error:', error.message);
+        return false;
+      }
     }
   },
 };
