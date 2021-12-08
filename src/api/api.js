@@ -13,7 +13,7 @@ const instance = axios.create({
 const mainAPI = {
   async getPosts() {
     try {
-      const { data } = await instance(`trending/feed/?limit=10`);
+      const { data } = await instance('trending/feed/?limit=10');
 
       return data.map((obj) => ({
         uniqueName: obj.authorMeta.name,
@@ -42,7 +42,7 @@ const mainAPI = {
     try {
       const [info, feed] = await Promise.all([
         instance(`user/info/${uniqueName}`),
-        axios.get('http://localhost:3001/itemList/?_limit=9'),
+        instance('trending/feed/?limit=6'),
       ]);
 
       // Проблема с получением информации о пользователе "Info"
@@ -51,8 +51,9 @@ const mainAPI = {
       }
 
       const posts = feed.data.map((obj) => ({
-        video: obj.video.playAddr,
-        views: obj.stats.playCount,
+        cover: obj.covers.origin,
+        video: obj.videoUrl,
+        views: obj.playCount,
       }));
 
       return {

@@ -7,8 +7,7 @@
     "dev": "cross-env NODE_ENV=development webpack --mode development",
     "build": "cross-env NODE_ENV=production webpack --mode production",
     "watch": "cross-env NODE_ENV=development webpack --mode development --watch",
-    "start": "cross-env NODE_ENV=development webpack serve --mode development",
-    "json-server": "json-server --watch ./public/user-feed.json --port 3001"
+    "start": "cross-env NODE_ENV=development webpack serve --mode development"
   },
   "author": "Andrey",
   "license": "ISC",
@@ -75,7 +74,6 @@
     "axios": "^0.24.0",
     "classnames": "^2.3.1",
     "core-js": "^3.19.2",
-    "json-server": "^0.17.0",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",

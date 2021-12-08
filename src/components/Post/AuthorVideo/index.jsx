@@ -7,6 +7,7 @@ const AuthorVideo = ({ cover, video }) => (
       muted
       loop
       controls
+      playsInline
       preload='metadata'
       poster={cover}
       src={video}

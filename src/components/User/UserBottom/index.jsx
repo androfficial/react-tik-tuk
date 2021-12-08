@@ -5,14 +5,15 @@ const UserBottom = ({ posts }) => (
   <div className='user-profile__bottom'>
     <ul className='user-profile__posts'>
       {posts &&
-        posts.map(({ video, views }, i) => (
+        posts.map(({ cover, video, views }, i) => (
           <li key={`${i}: ${views}`} className='user-profile__post post-user'>
             <video
-              autoPlay
               muted
               loop
               controls
+              playsInline
               preload='metadata'
+              poster={cover}
               src={video}
               className='post-user__video _author-video'
             />
