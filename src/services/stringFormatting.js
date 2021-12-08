@@ -1,3 +1,6 @@
+/* eslint-disable prefer-regex-literals */
 const regexp = new RegExp('#([^\\s]*)', 'g');
 
-export const stringFormatting = (str) => str.replace(regexp, '');
+const stringFormatting = (str) => str.replace(regexp, '');
+
+export default stringFormatting;

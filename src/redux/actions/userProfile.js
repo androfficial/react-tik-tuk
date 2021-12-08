@@ -1,4 +1,4 @@
-import { mainAPI } from '@api/api';
+import mainAPI from '@api/api';
 
 export const Types = {
   SET_USER_INFO: 'FEED@SET:USER_INFO',
@@ -23,5 +23,9 @@ export const setErrorApi = (payload) => ({
 
 export const fetchUserProfile = (uniqueName) => async (dispatch) => {
   const response = await mainAPI.getUserInfo(uniqueName);
-  response ? dispatch(setUserInfo(response)) : dispatch(setErrorApi(true));
+  if (response) {
+    dispatch(setUserInfo(response));
+  } else {
+    dispatch(setErrorApi(true));
+  }
 };

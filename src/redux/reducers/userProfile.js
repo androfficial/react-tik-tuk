@@ -1,12 +1,12 @@
 import { Types } from '@redux/actions/userProfile';
 
-let initialState = {
+const initialState = {
   userInfo: {},
   isLoaded: false,
   errorApi: false,
 };
 
-const userProfile = (state = initialState, action) => {
+const userProfile = (state = initialState, action = {}) => {
   switch (action.type) {
     case Types.SET_USER_INFO:
       return {

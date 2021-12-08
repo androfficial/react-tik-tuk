@@ -1,4 +1,4 @@
-export const numberFormatting = (number) => {
+const numberFormatting = (number) => {
   // Если не целое число
   if (!Number.isInteger(number)) {
     return number;
@@ -7,10 +7,12 @@ export const numberFormatting = (number) => {
   const integer = Math.trunc(number);
 
   if (String(integer).length > 4 && String(integer).length < 7) {
-    return +((integer / 1000).toFixed(1)) + 'К';
-  } else if (String(integer).length > 6) {
-    return (integer / 1000000).toFixed(1) + 'М';
-  } else {
-    return number;
+    return `${+(integer / 1000).toFixed(1)}К`;
   }
+  if (String(integer).length > 6) {
+    return `${(integer / 1000000).toFixed(1)}М`;
+  }
+  return number;
 };
+
+export default numberFormatting;

@@ -1,4 +1,4 @@
-import { mainAPI } from '@api/api';
+import mainAPI from '@api/api';
 
 export const Types = {
   SET_POSTS: 'FEED@SET:POSTS',
@@ -23,5 +23,9 @@ export const setErrorApi = (payload) => ({
 
 export const fetchPosts = (page) => async (dispatch) => {
   const response = await mainAPI.getPosts(page);
-  response ? dispatch(setPosts(response)) : dispatch(setErrorApi(true));
+  if (response) {
+    dispatch(setPosts(response));
+  } else {
+    dispatch(setErrorApi(true));
+  }
 };

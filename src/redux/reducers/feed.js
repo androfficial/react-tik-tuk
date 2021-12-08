@@ -1,6 +1,6 @@
 import { Types } from '@redux/actions/feed';
 
-let initialState = {
+const initialState = {
   posts: [],
   isLoaded: false,
   errorApi: false,
@@ -9,7 +9,7 @@ let initialState = {
   // pageSize: 5,
 };
 
-const feed = (state = initialState, action) => {
+const feed = (state = initialState, action = {}) => {
   switch (action.type) {
     case Types.SET_POSTS:
       return {

@@ -21,6 +21,11 @@ textarea,
 :active {
   outline: none;
 }
+a {
+  display: inline-block;
+  color: inherit;
+  text-decoration: none;
+}
 a,
 a:visited {
   text-decoration: none;
@@ -35,36 +40,31 @@ header,
 aside {
   display: block;
 }
-a {
-  display: inline-block;
-  color: inherit;
-  text-decoration: none;
-}
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
+  margin: 0;
   font-size: inherit;
   font-weight: 400;
-  margin: 0;
 }
 p {
   margin: 0;
 }
 ul,
 li {
-  list-style: none;
   padding: 0;
   margin: 0;
+  list-style: none;
 }
 button {
-  border: none;
-  background: none;
   padding: 0;
   margin: 0;
   cursor: pointer;
+  background: none;
+  border: none;
   &:active,
   &:focus {
     outline: none;
