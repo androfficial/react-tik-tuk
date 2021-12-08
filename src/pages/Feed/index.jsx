@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { Post, Preloader } from '@components';
-import { fetchPosts } from '@redux/actions/feed';
+import { setIsLoaded, fetchPosts } from '@redux/actions/feed';
 
 const Feed = () => {
   const dispatch = useDispatch();
@@ -14,6 +14,7 @@ const Feed = () => {
 
   useEffect(() => {
     dispatch(fetchPosts());
+    return () => dispatch(setIsLoaded(false));
   }, [dispatch]);
 
   return (

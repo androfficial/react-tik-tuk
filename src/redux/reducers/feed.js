@@ -24,6 +24,11 @@ const feed = (state = initialState, action = {}) => {
     //     ...state,
     //     currentPage: action.payload,
     //   };
+    case Types.SET_IS_LOADED:
+      return {
+        ...state,
+        isLoaded: action.payload,
+      };
     case Types.SET_ERROR_API:
       return {
         ...state,

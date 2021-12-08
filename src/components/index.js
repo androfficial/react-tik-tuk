@@ -3,3 +3,4 @@ export { default as NotFound } from './NotFound';
 export { default as Pagination } from './Pagination';
 export { default as Post } from './Post';
 export { default as Preloader } from './Preloader';
+export { default as User } from './User';

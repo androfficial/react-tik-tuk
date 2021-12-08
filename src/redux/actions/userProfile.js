@@ -1,9 +1,9 @@
 import mainAPI from '@api/api';
 
 export const Types = {
-  SET_USER_INFO: 'FEED@SET:USER_INFO',
-  SET_ERROR_API: 'FEED@SET:ERROR_API',
-  SET_IS_LOADED: 'FEED@SET:IS_LOADED',
+  SET_USER_INFO: 'USER_PROFILE@SET:USER_INFO',
+  SET_ERROR_API: 'USER_PROFILE@SET:ERROR_API',
+  SET_IS_LOADED: 'USER_PROFILE@SET:IS_LOADED',
 };
 
 export const setUserInfo = (payload) => ({

@@ -3,11 +3,17 @@ import mainAPI from '@api/api';
 export const Types = {
   SET_POSTS: 'FEED@SET:POSTS',
   SET_ERROR_API: 'FEED@SET:ERROR_API',
+  SET_IS_LOADED: 'FEED@SET:IS_LOADED',
   // SET_CURRENT_PAGE: 'FEED@SET:CURRENT_PAGE',
 };
 
 export const setPosts = (payload) => ({
   type: Types.SET_POSTS,
+  payload,
+});
+
+export const setIsLoaded = (payload) => ({
+  type: Types.SET_IS_LOADED,
   payload,
 });
 

@@ -42,7 +42,7 @@ const mainAPI = {
     try {
       const [info, feed] = await Promise.all([
         instance(`user/info/${uniqueName}`),
-        axios.get('/itemList/?_limit=9'),
+        axios.get('http://localhost:3001/itemList/?_limit=9'),
       ]);
 
       // Проблема с получением информации о пользователе "Info"
