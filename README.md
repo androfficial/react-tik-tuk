@@ -17,12 +17,6 @@ or
 yarn install
 ```
 
-```bash
-# Run app
-npm run start and running script with command "npm run json-server"
-```
-
----
 
 ### :hotsprings: API
 
