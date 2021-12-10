@@ -26,7 +26,7 @@
     "requireConfigFile": false,
     "sourceType": "module"
   },
-  "plugins": ["react", "react-hooks", "jsx-a11y", "prettier"],
+  "plugins": ["react", "prettier"],
   "settings": {
     "import/resolver": {
       "alias": {
@@ -46,8 +46,9 @@
     }
   },
   "rules": {
-    "react/no-array-index-key": "off",
+    "prettier/prettier": "error",
     "no-console": "off",
+    "react/no-array-index-key": "off",
     "react/react-in-jsx-scope": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/function-component-definition": [
@@ -55,12 +56,6 @@
       {
         "namedComponents": "arrow-function",
         "unnamedComponents": "arrow-function"
-      }
-    ],
-    "prettier/prettier": [
-      "error",
-      {
-        "endOfLine": "auto"
       }
     ]
   }
