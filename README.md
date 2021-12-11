@@ -7,6 +7,7 @@ Clone repo
 ```bash
 https://github.com/androfficial/react-tik-tuk.git
 ```
+
 ---
 
 ### :recycle: Available Scripts and Commands
@@ -17,7 +18,6 @@ npm i
 or
 yarn install
 ```
-
 
 ### :hotsprings: API
 
