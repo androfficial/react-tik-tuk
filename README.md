@@ -46,7 +46,7 @@ yarn run dev
 yarn run watch
 ```
 
-#### Scripts
+#### Scripts:
 
 - `eslint` - static analysis of scripts
 - `eslint:fix` - fix scripts errors
