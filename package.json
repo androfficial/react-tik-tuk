@@ -1,6 +1,8 @@
 {
   "name": "webpack-first-assembly",
   "version": "1.0.0",
+  "author": "Andrey",
+  "license": "ISC",
   "description": "webpack from 29.11.2021",
   "private": true,
   "scripts": {
@@ -15,19 +17,17 @@
     "format": "prettier --check . !src/styles/mixins/mixins.scss --ignore-path .gitignore",
     "format:fix": "prettier -w . !src/styles/mixins/mixins.scss --ignore-path .gitignore"
   },
-  "author": "Andrey",
-  "license": "ISC",
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "dependencies": {
+    "axios": "^0.24.0",
+    "classnames": "^2.3.1",
+    "core-js": "^3.19.2",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-redux": "^7.2.6",
+    "react-router-dom": "^6.0.2",
+    "redux": "^4.1.2",
+    "redux-thunk": "^2.4.1"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",
@@ -75,16 +75,16 @@
     "webpack-cli": "^4.9.1",
     "webpack-dev-server": "^4.6.0"
   },
-  "dependencies": {
-    "axios": "^0.24.0",
-    "classnames": "^2.3.1",
-    "core-js": "^3.19.2",
-    "prop-types": "^15.7.2",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-redux": "^7.2.6",
-    "react-router-dom": "^6.0.2",
-    "redux": "^4.1.2",
-    "redux-thunk": "^2.4.1"
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
