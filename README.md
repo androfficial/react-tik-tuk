@@ -57,6 +57,18 @@ yarn run watch
 
 ---
 
+### :hammer_and_wrench: Stack:
+
+- ReactJS + Hooks
+- React Router
+- Redux
+- Axios
+- PropTypes
+- ClassNames
+- SCSS / Mixins
+
+---
+
 ### :hotsprings: API
 
 - https://rapidapi.com/premium-apis-premium-apis-default/api/tiktok33
